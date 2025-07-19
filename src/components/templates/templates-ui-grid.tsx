@@ -1,11 +1,11 @@
-import { TemplateListing } from '@/lib/repokit'
+import { RepokitTemplate } from '@/lib/repokit'
 import { TemplatesUiGridItem } from '@/components/templates/templates-ui-grid-item'
 
-export function TemplatesUiGrid({ listings }: { listings: TemplateListing[] }) {
+export function TemplatesUiGrid({ templates }: { templates: RepokitTemplate[] }) {
   return (
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {listings.map((listing, index) => (
-        <TemplatesUiGridItem key={index} listing={listing} />
+      {templates.map((template, index) => (
+        <TemplatesUiGridItem key={index} template={template} />
       ))}
     </div>
   )

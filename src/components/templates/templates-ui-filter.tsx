@@ -2,11 +2,11 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { useTemplateFilterState } from '@/components/templates/use-template-filter-state'
-import { TemplateListing } from '@/lib/repokit'
+import { RepokitTemplate } from '@/lib/repokit'
 import { getLabelKeyword } from '@/components/templates/get-label-keyword'
 import { getLabelSource } from '@/components/templates/get-label-source'
 
-export function TemplatesUiFilter({ listings }: { listings: TemplateListing[] }) {
+export function TemplatesUiFilter({ templates }: { templates: RepokitTemplate[] }) {
   const {
     activeKeywords,
     activeSources,
@@ -18,7 +18,7 @@ export function TemplatesUiFilter({ listings }: { listings: TemplateListing[] })
     sources,
     toggleKeyword,
     toggleSource,
-  } = useTemplateFilterState({ listings })
+  } = useTemplateFilterState({ templates: templates })
 
   return (
     <div className="space-y-6">

@@ -1,32 +1,32 @@
 import { parseAsArrayOf, parseAsString, useQueryState } from 'nuqs'
-import { TemplateListing } from '@/lib/repokit'
+import { RepokitTemplate } from '@/lib/repokit'
 import { useMemo } from 'react'
-import { filterListings } from './filter-listings'
+import { filterTemplates } from './filter-templates'
 
 // TODO: Move these filtered keywords to the generators
 const filteredKeywords = ['legacy', 'template', 'solana']
 
-export function useTemplateFilterState({ listings }: { listings: TemplateListing[] }) {
+export function useTemplateFilterState({ templates }: { templates: RepokitTemplate[] }) {
   const [search, setSearch] = useQueryState('search', parseAsString.withDefault(''))
   const [activeSources, setActiveSources] = useQueryState('sources', parseAsArrayOf(parseAsString).withDefault([]))
   const [activeKeywords, setActiveKeywords] = useQueryState('keywords', parseAsArrayOf(parseAsString).withDefault([]))
 
   const sources = useMemo(() => {
-    const all = listings.flatMap((l) => l.source.name)
+    const all = templates.flatMap((l) => l.source.name)
 
     return Array.from(new Set(all))
-  }, [listings])
+  }, [templates])
 
   const keywords = useMemo(() => {
-    const all = listings.flatMap((l) => l.keywords)
+    const all = templates.flatMap((l) => l.keywords)
     const filtered = all.filter((k) => !filteredKeywords.includes(k))
 
     return Array.from(new Set(filtered)).sort()
-  }, [listings])
+  }, [templates])
 
   const filteredListings = useMemo(
-    () => filterListings({ listings, search, activeKeywords, activeSources }),
-    [listings, search, activeKeywords, activeSources],
+    () => filterTemplates({ templates: templates, search, activeKeywords, activeSources }),
+    [templates, search, activeKeywords, activeSources],
   )
 
   return {

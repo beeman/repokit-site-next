@@ -1,15 +1,22 @@
-import { listings } from '../generated/repokit/listings'
-import { TemplateListing, TemplateSource } from '../generated/repokit/types'
+import { templates } from '../generated/repokit/templates'
+import { RepokitSource, RepokitTemplate } from '../generated/repokit/types'
+import { images } from '@/lib/generated/repokit/images'
 
 // Re-export types so they can be used in the app.
-export type { TemplateListing, TemplateSource }
+export type { RepokitTemplate, RepokitSource }
 
-export function useTemplateListing({ name }: { name: string }) {
-  const listings = useTemplateListings()
+export function useRepokitTemplate({ name }: { name: string }) {
+  const templates = useRepokitTemplates()
 
-  return listings.find((l) => l.name === name)
+  return templates.find((l) => l.name === name)
 }
 
-export function useTemplateListings(): TemplateListing[] {
-  return listings
+export function useRepokitTemplateImage({ template }: { template: RepokitTemplate }) {
+  const image = images[`${template.source.name}-${template.name}`]
+
+  return image ?? null
+}
+
+export function useRepokitTemplates(): RepokitTemplate[] {
+  return templates
 }

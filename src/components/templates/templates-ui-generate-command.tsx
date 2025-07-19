@@ -1,5 +1,5 @@
 'use client'
-import { TemplateListing } from '@/lib/repokit'
+import { RepokitTemplate } from '@/lib/repokit'
 import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { CheckIcon, CopyIcon } from 'lucide-react'
@@ -17,7 +17,7 @@ function getCommand(pm: string, template: string) {
   }
 }
 
-export function TemplatesUiGenerateCommand({ listing: { source, path } }: { listing: TemplateListing }) {
+export function TemplatesUiGenerateCommand({ template: { source, path } }: { template: RepokitTemplate }) {
   const [selected, setSelected] = useState('pnpm')
   const [isCopied, setIsCopied] = useState(false)
   const template = `${source.owner}/${source.repo}/${path}`

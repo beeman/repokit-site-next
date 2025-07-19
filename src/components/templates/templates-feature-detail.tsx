@@ -2,14 +2,14 @@
 
 import { AppHero } from '@/components/app-hero'
 import { Button } from '@/components/ui/button'
-import { useTemplateListing } from '@/lib/repokit'
+import { useRepokitTemplate } from '@/lib/repokit'
 import Link from 'next/link'
 import { TemplatesUiLayoutDetail } from './templates-ui-layout-detail'
 
 export function TemplatesFeatureDetail({ name }: { name: string }) {
-  const listing = useTemplateListing({ name })
+  const template = useRepokitTemplate({ name })
 
-  if (!listing) {
+  if (!template) {
     return (
       <div>
         <AppHero title="Not Found" subtitle={`Template with name "${name}" not found.`} />
@@ -28,8 +28,8 @@ export function TemplatesFeatureDetail({ name }: { name: string }) {
           <Link href="/templates">Back to templates</Link>
         </Button>
       </div>
-      <AppHero title={listing.name} subtitle={listing.description} />
-      <TemplatesUiLayoutDetail listing={listing} />
+      <AppHero title={template.name} subtitle={template.description} />
+      <TemplatesUiLayoutDetail template={template} />
     </div>
   )
 }

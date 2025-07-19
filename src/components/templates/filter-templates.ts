@@ -1,17 +1,17 @@
-import { TemplateListing } from '@/lib/repokit'
+import { RepokitTemplate } from '@/lib/repokit'
 
-export function filterListings({
-  listings,
+export function filterTemplates({
+  templates,
   search,
   activeKeywords,
   activeSources,
 }: {
-  listings: TemplateListing[]
+  templates: RepokitTemplate[]
   search: string
   activeKeywords: string[]
   activeSources: string[]
 }) {
-  return listings
+  return templates
     .filter((l) => {
       if (search.trim() === '') {
         return true
