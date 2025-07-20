@@ -18,9 +18,7 @@ export function AppModal({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="w-full">
-          {title}
-        </Button>
+        <Button className="w-full">{title}</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[800px]">
         <DialogHeader>

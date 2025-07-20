@@ -1,16 +1,12 @@
 import { RepokitTemplate } from '@/lib/repokit'
+import { RepokitUrlState } from '@/lib/repokit/use-repokit-filters'
 
 export function filterTemplates({
-  templates,
   search,
-  activeKeywords,
-  activeSources,
-}: {
-  templates: RepokitTemplate[]
-  search: string
-  activeKeywords: string[]
-  activeSources: string[]
-}) {
+  selectedKeywords,
+  selectedSources,
+  templates,
+}: RepokitUrlState & { templates: RepokitTemplate[] }) {
   return templates
     .filter((l) => {
       if (search.trim() === '') {
@@ -22,6 +18,6 @@ export function filterTemplates({
 
       return inName || inDescription || inKeywords
     })
-    .filter((l) => (activeSources.length ? activeSources.some((s) => l.source.name === s) : true))
-    .filter((l) => activeKeywords.every((k) => l.keywords.includes(k)))
+    .filter((l) => (selectedSources.length ? selectedSources.some((s) => l.source.id === s) : true))
+    .filter((l) => selectedKeywords.every((k) => l.keywords.includes(k)))
 }

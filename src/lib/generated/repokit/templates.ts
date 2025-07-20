@@ -5,7 +5,8 @@ import { RepokitTemplate } from './types'
 export const templates: RepokitTemplate[] = [
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -22,7 +23,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -39,7 +41,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -56,7 +59,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -73,7 +77,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -90,7 +95,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -107,7 +113,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -125,7 +132,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -143,7 +151,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -160,7 +169,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -186,7 +196,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -212,7 +223,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -229,7 +241,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -246,7 +259,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana',
+      id: 'solana',
+      name: 'Solana',
       source: 'gh:solana-developers/solana-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -273,7 +287,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana-mobile',
+      id: 'solana-mobile',
+      name: 'Solana Mobile',
       source: 'gh:solana-developers/solana-mobile-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -290,7 +305,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'solana-mobile',
+      id: 'solana-mobile',
+      name: 'Solana Mobile',
       source: 'gh:solana-developers/solana-mobile-templates',
       provider: 'gh',
       owner: 'solana-developers',
@@ -307,7 +323,8 @@ export const templates: RepokitTemplate[] = [
   },
   {
     source: {
-      name: 'repokit-templates',
+      id: 'repokit-templates',
+      name: 'Repokit Templates',
       source: 'gh:beeman/repokit-templates',
       provider: 'gh',
       owner: 'beeman',

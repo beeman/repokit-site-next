@@ -1,11 +1,15 @@
 import { RepokitTemplate } from '@/lib/repokit'
 import Link from 'next/link'
 import { ExternalLinkIcon } from 'lucide-react'
-import { TemplatesUiImage } from './templates-ui-image'
+import { TemplatesUiImage } from '@/lib/repokit/templates-ui-image'
 
 export function TemplatesUiGridItem({ template }: { template: RepokitTemplate }) {
   return (
-    <Link href={`/templates/${template.name}`} className="border rounded-lg overflow-hidden" passHref>
+    <Link
+      href={`/templates/${template.source.id}/${template.name}`}
+      className="border rounded-lg overflow-hidden"
+      passHref
+    >
       <div className="flex items-center justify-center">
         <TemplatesUiImage template={template} />
       </div>

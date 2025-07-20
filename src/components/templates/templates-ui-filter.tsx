@@ -1,65 +1,74 @@
-import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
+import { useRepokitFilterState } from '@/lib/repokit/use-repokit-filters'
 import { Button } from '@/components/ui/button'
-import { useTemplateFilterState } from '@/components/templates/use-template-filter-state'
-import { RepokitTemplate } from '@/lib/repokit'
-import { getLabelKeyword } from '@/components/templates/get-label-keyword'
-import { getLabelSource } from '@/components/templates/get-label-source'
 
-export function TemplatesUiFilter({ templates }: { templates: RepokitTemplate[] }) {
-  const {
-    activeKeywords,
-    activeSources,
-    clear,
-    hasFilters,
-    keywords,
-    search,
-    setSearch,
-    sources,
-    toggleKeyword,
-    toggleSource,
-  } = useTemplateFilterState({ templates: templates })
+export function TemplatesUiFilter() {
+  return (
+    <div className="flex flex-col gap-4">
+      <TemplatesUiFilterHeader />
+      <TemplatesUiFilterSearch />
+      <TemplatesUiFilterKeywords />
+      <TemplatesUiFilterSources />
+    </div>
+  )
+}
+
+function TemplatesUiFilterHeader() {
+  const { clear, isFiltered } = useRepokitFilterState()
+  return (
+    <div className="flex justify-between items-center">
+      <span className="text-md font-bold py-1.5">Filter Templates</span>
+      {isFiltered ? (
+        <Button variant="outline" onClick={() => clear()}>
+          Clear
+        </Button>
+      ) : null}
+    </div>
+  )
+}
+
+function TemplatesUiFilterSearch() {
+  const { search, setSearch } = useRepokitFilterState()
+
+  return <Input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search templates..." />
+}
+
+function TemplatesUiFilterKeywords() {
+  const { filters, selectedKeywords, toggleKeyword } = useRepokitFilterState()
+  return filters.map((filter) => (
+    <div className="flex flex-col gap-2" key={filter.id}>
+      <div className={'text-md font-bold py-1.5'}>{filter.name}</div>
+      <div className="flex flex-col gap-2">
+        {filter.keywords.map((keyword) => (
+          <Button
+            onClick={() => toggleKeyword(keyword.id)}
+            variant={selectedKeywords.includes(keyword.id) ? 'default' : 'outline'}
+            key={keyword.id}
+          >
+            {keyword.name}
+          </Button>
+        ))}
+      </div>
+    </div>
+  ))
+}
+
+function TemplatesUiFilterSources() {
+  const { sources, selectedSources, toggleSource } = useRepokitFilterState()
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <span className="text-lg font-bold py-1">Filter Templates</span>
-        {hasFilters ? (
-          <Button variant="outline" onClick={() => clear()}>
-            Clear
+    <div className="flex flex-col gap-2">
+      <div className={'text-md font-bold py-1.5'}>Sources</div>
+      <div className="flex flex-col gap-2">
+        {sources.map((source) => (
+          <Button
+            key={source.id}
+            variant={selectedSources.includes(source.id) ? 'default' : 'outline'}
+            onClick={() => toggleSource(source.id)}
+          >
+            {source.name}
           </Button>
-        ) : null}
-      </div>
-      <Input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search templates..." />
-      <div>
-        <Label>Filters</Label>
-        <div className="space-y-2 pt-2">
-          {keywords.map((keyword) => (
-            <Button
-              key={keyword}
-              variant={activeKeywords.includes(keyword) ? 'default' : 'outline'}
-              onClick={() => toggleKeyword(keyword)}
-              className="w-full justify-start"
-            >
-              {getLabelKeyword(keyword)}
-            </Button>
-          ))}
-        </div>
-      </div>
-      <div>
-        <Label>Sources</Label>
-        <div className="space-y-2 pt-2">
-          {sources.map((item) => (
-            <Button
-              key={item}
-              variant={activeSources.some((s) => s === item) ? 'default' : 'outline'}
-              onClick={() => toggleSource(item)}
-              className="w-full justify-start"
-            >
-              {getLabelSource(item)}
-            </Button>
-          ))}
-        </div>
+        ))}
       </div>
     </div>
   )

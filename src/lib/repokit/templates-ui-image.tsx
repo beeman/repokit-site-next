@@ -1,6 +1,6 @@
 import Image, { ImageProps } from 'next/image'
-import { RepokitTemplate } from '@/lib/generated/repokit/types'
-import { useRepokitTemplateImage } from '@/lib/repokit'
+import { RepokitTemplate } from '../generated/repokit/types'
+import { useRepokitTemplateImage } from './use-repokit-template-image'
 
 export function TemplatesUiImage({
   template,
