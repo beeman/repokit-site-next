@@ -1,5 +1,4 @@
-import { templates } from '../generated/repokit/templates'
-import { RepokitTemplate } from '../generated/repokit/types'
+import { RepokitTemplate, templates } from '@/lib/generated/repokit'
 
 export function useRepokitTemplates(): RepokitTemplate[] {
   return templates

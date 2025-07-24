@@ -1,15 +1,13 @@
-import { RepokitFilter, RepokitTemplate } from '@/lib/generated/repokit/types'
-import { useRepokitSourceMap } from '@/lib/repokit/use-repokit-source-map'
-import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { AppModal } from '@/components/app-modal'
-import { TemplatesUiGenerateCommand } from '@/components/templates/templates-ui-generate-command'
 import { ExternalLinkIcon } from 'lucide-react'
-import { useRepokitFiltersActive } from '@/lib/repokit/use-repokit-filters-active'
+import { RepokitFilter, RepokitTemplate, useRepokitSourceMap, useRepokitTemplateFilters } from '@/lib/repokit'
+import { Button } from '@/components/ui/button'
+import { AppModal } from '@/components/app-modal'
+import { TemplatesUiGenerateCommand } from './templates-ui-generate-command'
 
-export function TemplateUiSidebarDetail({ template }: { template: RepokitTemplate }) {
+export function TemplatesUiSidebarDetail({ template }: { template: RepokitTemplate }) {
   const sourceMap = useRepokitSourceMap()
-  const activeFilters: RepokitFilter[] = useRepokitFiltersActive({ template })
+  const filters: RepokitFilter[] = useRepokitTemplateFilters({ template })
 
   return (
     <div className="flex flex-col gap-4">
@@ -28,10 +26,10 @@ export function TemplateUiSidebarDetail({ template }: { template: RepokitTemplat
             <strong>Author:</strong>
             <span>{sourceMap[template.source.name].name}</span>
           </p>
-          {activeFilters.map((activeFilter) => (
-            <div key={activeFilter.id} className="flex justify-between text-sm">
-              <strong>{activeFilter.name}:</strong>
-              <span>{activeFilter.keywords.map((keyword) => keyword.name).join(', ')}</span>
+          {filters.map((filters) => (
+            <div key={filters.id} className="flex justify-between text-sm">
+              <strong>{filters.name}:</strong>
+              <span>{filters.keywords.map((keyword) => keyword.name).join(', ')}</span>
             </div>
           ))}
         </div>

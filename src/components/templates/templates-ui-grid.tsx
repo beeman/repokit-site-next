@@ -1,5 +1,5 @@
 import { RepokitTemplate } from '@/lib/repokit'
-import { TemplatesUiGridItem } from '@/components/templates/templates-ui-grid-item'
+import { TemplatesUiGridItem } from './templates-ui-grid-item'
 
 export function TemplatesUiGrid({ templates }: { templates: RepokitTemplate[] }) {
   return (

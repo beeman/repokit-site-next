@@ -1,6 +1,6 @@
-import { RepokitSource } from '@/lib/generated/repokit/types'
 import { useMemo } from 'react'
-import { useRepokitSources } from '@/lib/repokit/use-repokit-source'
+import { RepokitSource } from '@/lib/generated/repokit'
+import { useRepokitSources } from './use-repokit-source'
 
 export function useRepokitSourceMap(): Record<string, RepokitSource> {
   const sources = useRepokitSources()

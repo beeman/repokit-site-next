@@ -1,7 +1,6 @@
-import { RepokitTemplate } from '@/lib/repokit'
+import { RepokitTemplate, TemplatesUiImage } from '@/lib/repokit'
 import Link from 'next/link'
 import { ExternalLinkIcon } from 'lucide-react'
-import { TemplatesUiImage } from '@/lib/repokit/templates-ui-image'
 
 export function TemplatesUiGridItem({ template }: { template: RepokitTemplate }) {
   return (

@@ -1,5 +1,4 @@
-import { images } from '../generated/repokit/images'
-import { RepokitTemplate } from '../generated/repokit/types'
+import { images, RepokitTemplate } from '@/lib/generated/repokit'
 
 export function useRepokitTemplateImage({ template }: { template: RepokitTemplate }) {
   const image = images[`${template.source.id}-${template.name}`]

@@ -1,6 +1,6 @@
-import { useRepokitFilterState } from '@/lib/repokit/use-repokit-filters'
-import { TemplatesUiGrid } from '@/components/templates/templates-ui-grid'
 import { Button } from '@/components/ui/button'
+import { useRepokitFilterState } from '@/lib/repokit'
+import { TemplatesUiGrid } from './templates-ui-grid'
 
 export function TemplatesUiMain() {
   const { clear, templates } = useRepokitFilterState()

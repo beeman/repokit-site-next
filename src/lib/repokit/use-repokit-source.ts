@@ -1,5 +1,4 @@
-import { RepokitSource } from '../generated/repokit/types'
-import { sources } from '../generated/repokit/sources'
+import { RepokitSource, sources } from '@/lib/generated/repokit'
 
 export function useRepokitSources(): RepokitSource[] {
   return sources

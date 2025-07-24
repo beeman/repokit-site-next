@@ -1,5 +1,5 @@
-import { RepokitTemplate } from '@/lib/repokit'
-import { RepokitUrlState } from '@/lib/repokit/use-repokit-filters'
+import { RepokitTemplate } from '../generated/repokit'
+import { RepokitUrlState } from './use-repokit-url-state'
 
 export function filterTemplates({
   search,

@@ -1,7 +1,7 @@
 'use client'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { TemplatesUiFilter } from '@/components/templates/templates-ui-filter'
-import { TemplatesUiMain } from '@/components/templates/templates-ui-main'
+import { TemplatesUiFilter } from './templates-ui-filter'
+import { TemplatesUiMain } from './templates-ui-main'
 
 export function TemplatesUiLayoutList() {
   return (
